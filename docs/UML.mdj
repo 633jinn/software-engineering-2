@@ -6975,9 +6975,9 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 39.47998046875,
+											"left": 40.72998046875,
 											"top": 13,
-											"width": 59.64396667480469,
+											"width": 59.8367919921875,
 											"height": 13,
 											"text": "자전거 대여"
 										},
@@ -6991,7 +6991,7 @@
 											"parentStyle": true,
 											"left": 21,
 											"top": 13,
-											"width": 12.47998046875,
+											"width": 13.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
@@ -16481,9 +16481,9 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 23.47998046875,
+											"left": 24.72998046875,
 											"top": 13,
-											"width": 59.64396667480469,
+											"width": 59.8367919921875,
 											"height": 13,
 											"text": "자전거 등록"
 										},
@@ -16497,7 +16497,7 @@
 											"parentStyle": true,
 											"left": 5,
 											"top": 13,
-											"width": 12.47998046875,
+											"width": 13.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
@@ -19169,9 +19169,9 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 47.47998046875,
+											"left": 48.72998046875,
 											"top": 21,
-											"width": 111.46192932128906,
+											"width": 112.0404052734375,
 											"height": 13,
 											"text": "자전거 대여 정보 조회"
 										},
@@ -19185,7 +19185,7 @@
 											"parentStyle": true,
 											"left": 29,
 											"top": 21,
-											"width": 12.47998046875,
+											"width": 13.72998046875,
 											"height": 13,
 											"text": "sd"
 										}
@@ -25814,7 +25814,7 @@
 											"top": 884,
 											"width": 118.39990234375,
 											"height": 13,
-											"text": "RentBicycleInfoUI"
+											"text": "RentBicycleUI"
 										},
 										{
 											"_type": "LabelView",
@@ -28340,7 +28340,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGW3X7QX4MF04U="
 					},
-					"name": "RentBicycleInfoUI",
+					"name": "RentBicycleUI",
 					"stereotype": {
 						"$ref": "AAAAAAGW6J2oXtODZdw="
 					},
