@@ -976,7 +976,7 @@
 									"parentStyle": true,
 									"left": 411,
 									"top": 389,
-									"width": 128.47544921875,
+									"width": 127,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGWqmtIwnbt9eE="
@@ -3040,7 +3040,7 @@
 									"parentStyle": true,
 									"left": 407.5,
 									"top": 733,
-									"width": 73.41181640625,
+									"width": 72,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGWxK69gNyWKRQ="
@@ -3536,7 +3536,7 @@
 									"parentStyle": true,
 									"left": 415.5,
 									"top": 301,
-									"width": 73.41181640625,
+									"width": 72,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGWxK8QVgcjgwE="
@@ -4277,7 +4277,7 @@
 											"parentStyle": true,
 											"left": 40.72998046875,
 											"top": 13,
-											"width": 47.84,
+											"width": 44.97998046875,
 											"height": 13,
 											"text": "회원가입"
 										},
@@ -7328,7 +7328,7 @@
 											"parentStyle": true,
 											"left": 40.72998046875,
 											"top": 13,
-											"width": 63.41181640625,
+											"width": 59.8367919921875,
 											"height": 13,
 											"text": "자전거 대여"
 										},
@@ -11932,7 +11932,7 @@
 											"parentStyle": true,
 											"left": 32.72998046875,
 											"top": 13,
-											"width": 35.879999999999995,
+											"width": 33.7349853515625,
 											"height": 13,
 											"text": "로그인"
 										},
@@ -14979,7 +14979,7 @@
 											"parentStyle": true,
 											"left": 32.72998046875,
 											"top": 13,
-											"width": 47.84,
+											"width": 44.97998046875,
 											"height": 13,
 											"text": "로그아웃"
 										},
@@ -18026,7 +18026,7 @@
 											"parentStyle": true,
 											"left": 32.72998046875,
 											"top": 13,
-											"width": 63.41181640625,
+											"width": 59.8367919921875,
 											"height": 13,
 											"text": "자전거 등록"
 										},
@@ -21071,7 +21071,7 @@
 											"parentStyle": true,
 											"left": 48.72998046875,
 											"top": 21,
-											"width": 118.47544921874999,
+											"width": 112.0404052734375,
 											"height": 13,
 											"text": "자전거 대여 정보 조회"
 										},
@@ -26162,7 +26162,7 @@
 											"top": 419,
 											"width": 167.2958984375,
 											"height": 13,
-											"text": "-bicycleId",
+											"text": "-bicycleList",
 											"horizontalAlignment": 0
 										},
 										{
@@ -26350,7 +26350,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 141,
-											"top": 77,
+											"top": 85,
 											"width": 81.57080078125,
 											"height": 13,
 											"text": "«entity»"
@@ -26364,7 +26364,7 @@
 											"font": "Arial;13;3",
 											"parentStyle": true,
 											"left": 141,
-											"top": 92,
+											"top": 100,
 											"width": 81.57080078125,
 											"height": 13,
 											"text": "User"
@@ -26403,7 +26403,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 136,
-									"top": 72,
+									"top": 80,
 									"width": 91.57080078125,
 									"height": 38,
 									"stereotypeLabel": {
@@ -26441,7 +26441,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 141,
-											"top": 115,
+											"top": 123,
 											"width": 81.57080078125,
 											"height": 13,
 											"text": "#id",
@@ -26459,7 +26459,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 141,
-											"top": 130,
+											"top": 138,
 											"width": 81.57080078125,
 											"height": 13,
 											"text": "#password",
@@ -26469,7 +26469,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 136,
-									"top": 110,
+									"top": 118,
 									"width": 91.57080078125,
 									"height": 38
 								},
@@ -26495,7 +26495,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 141,
-											"top": 153,
+											"top": 161,
 											"width": 81.57080078125,
 											"height": 13,
 											"text": "+findUser()",
@@ -26505,7 +26505,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 136,
-									"top": 148,
+									"top": 156,
 									"width": 91.57080078125,
 									"height": 23
 								},
@@ -26548,9 +26548,9 @@
 							"parentStyle": false,
 							"containerChangeable": true,
 							"left": 136,
-							"top": 72,
+							"top": 80,
 							"width": 90.57080078125,
-							"height": 114,
+							"height": 106,
 							"nameCompartment": {
 								"$ref": "AAAAAAGW3X+pw4SnsJk="
 							},
@@ -27157,8 +27157,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 364,
-									"top": 138,
+									"left": 365,
+									"top": 140,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -27179,8 +27179,8 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 364,
-									"top": 153,
+									"left": 365,
+									"top": 155,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -27201,8 +27201,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 365,
-									"top": 109,
+									"left": 364,
+									"top": 111,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -27221,7 +27221,7 @@
 								"$ref": "AAAAAAGW3YCMe4TSd2w="
 							},
 							"lineStyle": 1,
-							"points": "503:131;228:129",
+							"points": "503:131;228:133",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGW3d/y9qYr9hY="
@@ -30495,9 +30495,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGW3X8MAYO7W/c="
 							},
-							"name": "bicycleId",
-							"visibility": "private",
-							"type": ""
+							"name": "bicycleList",
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -38437,7 +38436,7 @@
 									"containerExtending": true,
 									"left": 236,
 									"top": 644,
-									"width": 80.380859375,
+									"width": 85.02394104003906,
 									"height": 36,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGW6J2oXdIDlhA="
@@ -38635,7 +38634,7 @@
 									"containerExtending": true,
 									"left": 236,
 									"top": 708,
-									"width": 80.380859375,
+									"width": 85.02394104003906,
 									"height": 36,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGW6J2oXdIN3UU="
@@ -38833,7 +38832,7 @@
 									"containerExtending": true,
 									"left": 236,
 									"top": 764,
-									"width": 80.380859375,
+									"width": 85.02394104003906,
 									"height": 36,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGW6J2oXdIXay0="
@@ -39229,7 +39228,7 @@
 									"containerExtending": true,
 									"left": 236,
 									"top": 876,
-									"width": 80.380859375,
+									"width": 85.02394104003906,
 									"height": 36,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGW6J2oXdIr8kY="
@@ -40365,7 +40364,7 @@
 									"containerExtending": true,
 									"left": 740,
 									"top": 96,
-									"width": 80.380859375,
+									"width": 85.02394104003906,
 									"height": 36,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGW6J2oXdJeUFg="
@@ -40563,7 +40562,7 @@
 									"containerExtending": true,
 									"left": 740,
 									"top": 148,
-									"width": 80.380859375,
+									"width": 85.02394104003906,
 									"height": 36,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGW6J2oXdJodjk="
