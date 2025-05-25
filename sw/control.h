@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <iostream>
 #include <list>
@@ -6,20 +8,22 @@
 #include "entity.h"
 using namespace std;
 
-//회원 가입
+// 회원 가입
 class SignIn
 {
 private:
     SigninUI *signInBoundary;
+    UserDB *userDB;
     list<Member> memberList;
 
 public:
-    SignIn();
+    SignIn(UserDB *userDB);
     ~SignIn();
-    void addNewMember(string id, string password, string phoneNumber);
+    void startInterface(ifstream &in_fp, ofstream &out_fp);
+    Member *addNewMember(string id, string password, string phoneNumber);
 };
 
-//로그인
+// 로그인
 class Login
 {
 private:
@@ -29,7 +33,7 @@ public:
     ~Login();
 };
 
-//로그아웃
+// 로그아웃
 class Logout
 {
 private:
@@ -39,7 +43,7 @@ public:
     ~Logout();
 };
 
-//자전거 등록
+// 자전거 등록
 class RegisterBicycle
 {
 private:
@@ -49,7 +53,7 @@ public:
     ~RegisterBicycle();
 };
 
-//자전거 대여
+// 자전거 대여
 class RentBicycle
 {
 private:
@@ -59,7 +63,7 @@ public:
     ~RentBicycle();
 };
 
-//대여 정보 확인
+// 대여 정보 확인
 class CheckRentedInfo
 {
 private:

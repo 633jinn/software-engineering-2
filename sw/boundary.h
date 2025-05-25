@@ -2,22 +2,27 @@
 
 #include <string>
 #include <iostream>
+#include "entity.h"
+#include "control.h"
 using namespace std;
 
 // 전방 선언
 class SignIn;
 
-class SigninUI 
+class SigninUI
 {
 private:
     SignIn *signIn;
+    string id;
+    string password;
+    string phoneNumber;
+    void writeOutput(ofstream &out_fp, Member *member);
 
 public:
     SigninUI(SignIn *signIn);
     ~SigninUI();
-    void signInAccount(string id, string password, string phoneNumber);
+    void signInAccount(ifstream &in_fp, ofstream &out_fp);
 };
-
 
 class LoginUI
 {

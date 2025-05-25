@@ -1,12 +1,18 @@
+#pragma once
+
+#include <string>
+#include <list>
+using namespace std;
+
 class User
 {
 protected:
     string id;
     string password;
+
 public:
     virtual void findUser() = 0;
 };
-
 
 class Member : public User
 {
@@ -21,6 +27,9 @@ public:
     void checkUserRentAvailability();
     void getBicycle();
     void getRentedBicycle();
+    string getId();
+    string getPassword();
+    string getPhoneNumber();
 };
 
 class Manager : public User
@@ -28,7 +37,7 @@ class Manager : public User
 private:
     /* data */
 public:
-    Manager(/* args */);
+    Manager(string id, string password);
     ~Manager();
     void findUser() override;
 };
@@ -45,4 +54,16 @@ public:
     ~Bicycle();
     bool findBicycle(string id);
     bool getBicycleDetails();
+};
+
+class UserDB
+{
+private:
+    Manager* manager;
+    list<Member *> memberList;
+
+public:
+    UserDB();
+    ~UserDB();
+    void addMember(Member *member);
 };

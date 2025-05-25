@@ -3,8 +3,8 @@
 #include <fstream>
 #include <list>
 
-#include "entity/member.h"
-#include "control/signin.h"
+#include "entity.h"
+#include "control.h"
 
 using namespace std;
 
@@ -29,7 +29,10 @@ int main()
   in_fp.open(INPUT_FILE_NAME);
   out_fp.open(OUTPUT_FILE_NAME);
 
-  doTask();
+  // UserDB 생성
+  UserDB *userDB = new UserDB();
+
+  doTask(userDB);
 
   // ...
 
@@ -39,7 +42,7 @@ int main()
   return 0;
 }
 
-void doTask()
+void doTask(UserDB *userDB)
 {
 
   // 메뉴 파싱을 위한 level 구분을 위한 변수
@@ -61,8 +64,9 @@ void doTask()
       {
       case 1: // "1.1. 회원가입" 메뉴 부분
       {
-        // 해당 기능 수행
-        join();
+
+        SignIn *signInControl = new SignIn(userDB);
+        signInControl->startInterface(in_fp, out_fp);
         break;
       }
       case 2:
@@ -89,26 +93,4 @@ void doTask()
     // ...
   }
   is_program_exit = 1;
-}
-
-void join()
-{
-
-  SignIn signInControl;
-  /*
-   * 단순히 파일을 통해 입출력하는 방법을 보이기 위한 것이므로 실제 이 함수를 사용하면 안됨.
-   * 위의 switch 문에서 control 및 boundary class를 이용해서 이 기능이 구현되도록 해야 함.
-   */
-
-  char  ID[MAX_STRING], password[MAX_STRING], phoneNumber[MAX_STRING];
-
-  // 입력 형식 : 이름, ID, Password를 파일로부터 읽음
-  in_fp >> ID >> password >> phoneNumber;
-
-  // 해당 기능 수행
-  signInControl.addNewMember(ID, password, phoneNumber);
-
-  // 출력 형식
-  out_fp << "1.1. 회원가입" << endl;
-  out_fp << "> " << ID << " " << password << " " << phoneNumber << " " << password << endl;
 }

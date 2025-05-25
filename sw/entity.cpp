@@ -16,6 +16,31 @@ Member::~Member()
 {
 }
 
+// 관리자
+Manager::Manager(string id, string password)
+{
+    this->id = id;
+    this->password = password;
+}
+
+// 데이터베이스
+UserDB::UserDB()
+{
+    manager = new Manager("admin", "admin");
+}
+UserDB::~UserDB()
+{
+    for (auto member : memberList)
+    {
+        delete &member;
+    }
+}
+
+void UserDB::addMember(Member *member)
+{
+    memberList.push_back(member);
+}
+
 // 자전거
 Bicycle::Bicycle(string id, string name)
 {
