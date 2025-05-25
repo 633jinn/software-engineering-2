@@ -1,2 +1,2 @@
 1.1. 회원가입
-< test test 01000 2
+> test test 01000

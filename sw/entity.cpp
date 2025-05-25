@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string>
 #include "entity.h"
 using namespace std;
 
@@ -16,11 +14,50 @@ Member::~Member()
 {
 }
 
+void Member::findUser()
+{
+}
+
+void Member::checkUserRentAvailability()
+{
+}
+
+void Member::getBicycle()
+{
+}
+
+void Member::getRentedBicycle()
+{
+}
+
+string Member::getId()
+{
+    return id;
+}
+
+string Member::getPassword()
+{
+    return password;
+}
+
+string Member::getPhoneNumber()
+{
+    return phoneNumber;
+}
+
 // 관리자
 Manager::Manager(string id, string password)
 {
     this->id = id;
     this->password = password;
+}
+
+Manager::~Manager()
+{
+}
+
+void Manager::findUser()
+{
 }
 
 // 데이터베이스
@@ -30,9 +67,10 @@ UserDB::UserDB()
 }
 UserDB::~UserDB()
 {
+    delete manager;
     for (auto member : memberList)
     {
-        delete &member;
+        delete member;
     }
 }
 
@@ -53,19 +91,15 @@ Bicycle::~Bicycle()
 }
 bool Bicycle::findBicycle(string id)
 {
-    if (id == this->getId())
-    {
-        return true;
-    }
-    return false;
+    return this->id == id;
 }
 
 bool Bicycle::getBicycleDetails()
 {
-    return false;
+    return true;
 }
 
 string Bicycle::getId()
 {
-    return this->id;
+    return id;
 }

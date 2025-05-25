@@ -1,9 +1,7 @@
-#pragma once
+#ifndef CONTROL_H
+#define CONTROL_H
 
-#include <string>
-#include <iostream>
-#include <list>
-
+#include "forward.h"
 #include "boundary.h"
 #include "entity.h"
 using namespace std;
@@ -72,3 +70,4 @@ public:
     CheckRentedInfo(/* args */);
     ~CheckRentedInfo();
 };
+#endif

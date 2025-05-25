@@ -1,6 +1,3 @@
-#include <string>
-#include <list>
-
 #include "control.h"
 using namespace std;
 

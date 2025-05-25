@@ -1,20 +1,10 @@
-// 헤더 선언
-#include <string.h>
-#include <fstream>
-#include <list>
-
+#include "forward.h"
 #include "entity.h"
 #include "control.h"
-
 using namespace std;
 
-// 상수 선언
-#define MAX_STRING 32
-#define INPUT_FILE_NAME "input.txt"
-#define OUTPUT_FILE_NAME "output.txt"
-
 // 함수 선언
-void doTask();
+void doTask(UserDB *userDB);
 void join();
 void program_exit();
 

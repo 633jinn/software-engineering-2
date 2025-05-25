@@ -1,13 +1,11 @@
-#pragma once
+#ifndef BOUNDARY_H
+#define BOUNDARY_H
 
 #include <string>
 #include <iostream>
 #include "entity.h"
 #include "control.h"
 using namespace std;
-
-// 전방 선언
-class SignIn;
 
 class SigninUI
 {
@@ -59,3 +57,4 @@ public:
     CheckRentedInfoUI(/* args */);
     ~CheckRentedInfoUI();
 };
+#endif

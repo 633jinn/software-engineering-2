@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ENTITY_H
+#define ENTITY_H
 
 #include <string>
 #include <list>
@@ -59,7 +60,7 @@ public:
 class UserDB
 {
 private:
-    Manager* manager;
+    Manager *manager;
     list<Member *> memberList;
 
 public:
@@ -67,3 +68,4 @@ public:
     ~UserDB();
     void addMember(Member *member);
 };
+#endif

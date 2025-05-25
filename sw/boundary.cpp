@@ -1,5 +1,3 @@
-#include <string>
-#include <fstream>
 #include "boundary.h"
 #include "entity.h"
 using namespace std;

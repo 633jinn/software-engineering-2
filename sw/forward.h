@@ -1,0 +1,22 @@
+#ifndef FORWARD_H
+#define FORWARD_H
+
+// 상수 선언
+#define MAX_STRING 32
+#define INPUT_FILE_NAME "input.txt"
+#define OUTPUT_FILE_NAME "output.txt"
+
+//전방 선언
+class SignIn;
+class Login;
+class CheckRentedInfo;
+class SigninUI;
+class LoginUI;
+class CheckRentedInfoUI;
+
+// 헤더 선언
+#include <string.h>
+#include <fstream>
+#include <list>
+
+#endif
