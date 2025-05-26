@@ -2,6 +2,8 @@
 #include <string>
 #include <fstream>
 #include <list>
+#include <locale>
+#include <codecvt>
 
 #include "forward.h"
 #include "control/signupControl.h"
@@ -21,6 +23,11 @@ using namespace std;
 
 void doTask(ifstream &in_fp, ofstream &out_fp, Database *database, Session *session)
 {
+  // UTF-8 인코딩 설정
+  locale::global(locale("ko_KR.UTF-8"));
+  in_fp.imbue(locale());
+  out_fp.imbue(locale());
+  cout.imbue(locale());
 
   // 메뉴 파싱을 위한 level 구분을 위한 변수
   int menu_level_1 = 0, menu_level_2 = 0;
