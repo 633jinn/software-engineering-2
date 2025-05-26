@@ -63,7 +63,7 @@ void doTask(ifstream &in_fp, ofstream &out_fp, Database *database, Session *sess
       case 2:
       {
         Logout *logoutControl = new Logout(database, session);
-        logoutControl->startInterface(in_fp, out_fp);
+        logoutControl->startInterface(out_fp);
         delete logoutControl;
         break;
       }
@@ -118,7 +118,7 @@ void doTask(ifstream &in_fp, ofstream &out_fp, Database *database, Session *sess
       {
       case 1: // "6.1. 종료" 메뉴 부분
       {
-        ExitProgram *exitProgramControl = new ExitProgram(database);
+        ExitProgram *exitProgramControl = new ExitProgram();
         exitProgramControl->startInterface(out_fp);
         delete exitProgramControl;
         is_program_exit = 1;

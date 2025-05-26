@@ -6,17 +6,15 @@
 #include <list>
 
 #include "../forward.h"
-#include "../entity/database.h"
 #include "../boundary/exitProgramUI.h"
 // 프로그램 종료
 class ExitProgram
 {
 private:
     ExitProgramUI *exitProgramUI;
-    Database *database;
 
 public:
-    ExitProgram(Database *database);
+    ExitProgram();
     ~ExitProgram();
     void startInterface(ofstream &out_fp);
 };

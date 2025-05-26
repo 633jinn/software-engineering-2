@@ -4,6 +4,11 @@
 #include "../entity/bicycle.h"
 using namespace std;
 
+void RegisterBicycleUI::readInput(ifstream &in_fp)
+{
+    in_fp >> bicycleId >> bicycleName;
+}
+
 RegisterBicycleUI::RegisterBicycleUI(RegisterBicycle *registerBicycle)
 {
     this->registerBicycle = registerBicycle;
@@ -13,7 +18,7 @@ RegisterBicycleUI::~RegisterBicycleUI() {}
 
 void RegisterBicycleUI::registerBicycleInfo(ifstream &in_fp, ofstream &out_fp)
 {
-    in_fp >> bicycleId >> bicycleName;
+    readInput(in_fp);
     Bicycle *bicycle = registerBicycle->registerBicycle(bicycleId, bicycleName);
     writeOutput(out_fp, bicycle);
 }

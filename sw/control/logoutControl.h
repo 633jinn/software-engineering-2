@@ -21,7 +21,7 @@ private:
 public:
     Logout(Database *database, Session *session);
     ~Logout();
-    void startInterface(ifstream &in_fp, ofstream &out_fp);
+    void startInterface(ofstream &out_fp);
     User *logout();
 };
 

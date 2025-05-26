@@ -12,6 +12,7 @@ private:
     Login *login;
     string id;
     string password;
+    void readInput(ifstream &in_fp);
     void writeOutput(ofstream &out_fp, User *user);
 
 public:

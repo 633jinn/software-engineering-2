@@ -13,6 +13,7 @@ private:
     RegisterBicycle *registerBicycle;
     string bicycleId;
     string bicycleName;
+    void readInput(ifstream &in_fp);
     void writeOutput(ofstream &out_fp, Bicycle *bicycle);
 
 public:

@@ -14,6 +14,7 @@ private:
     string id;
     string password;
     string phoneNumber;
+    void readInput(ifstream &in_fp);
     void writeOutput(ofstream &out_fp, Member *member);
 
 public:

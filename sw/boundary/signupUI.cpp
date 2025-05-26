@@ -15,9 +15,14 @@ SignUpUI::~SignUpUI()
 {
 }
 
-void SignUpUI::signUpAccount(ifstream &in_fp, ofstream &out_fp)
+void SignUpUI::readInput(ifstream &in_fp)
 {
     in_fp >> id >> password >> phoneNumber;
+}
+
+void SignUpUI::signUpAccount(ifstream &in_fp, ofstream &out_fp)
+{
+    readInput(in_fp);
     Member *member = signUp->addNewMember(id, password, phoneNumber);
     writeOutput(out_fp, member);
 }

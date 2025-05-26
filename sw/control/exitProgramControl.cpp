@@ -1,9 +1,8 @@
 #include "../control/exitProgramControl.h"
 #include "../boundary/exitProgramUI.h"
 #include "../entity/database.h"
-ExitProgram::ExitProgram(Database *database)
+ExitProgram::ExitProgram()
 {
-    this->database = database;
     exitProgramUI = new ExitProgramUI(this);
 }
 

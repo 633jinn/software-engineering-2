@@ -16,9 +16,9 @@ Logout::~Logout()
     delete logoutUI;
 }
 
-void Logout::startInterface(ifstream &in_fp, ofstream &out_fp)
+void Logout::startInterface(ofstream &out_fp)
 {
-    logoutUI->logoutAccount(in_fp, out_fp);
+    logoutUI->logoutAccount(out_fp);
 }
 
 User *Logout::logout()

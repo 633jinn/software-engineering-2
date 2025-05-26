@@ -11,7 +11,7 @@ LogoutUI::LogoutUI(Logout *logout)
 
 LogoutUI::~LogoutUI() {}
 
-void LogoutUI::logoutAccount(ifstream &in_fp, ofstream &out_fp)
+void LogoutUI::logoutAccount(ofstream &out_fp)
 {
     User *user = logout->logout();
     writeOutput(out_fp, user);

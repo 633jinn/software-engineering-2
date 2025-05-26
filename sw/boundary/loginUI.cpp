@@ -2,7 +2,13 @@
 #include "../control/loginControl.h"
 #include "../entity/user.h"
 #include <fstream>
+#include <iostream>
 using namespace std;
+
+void LoginUI::readInput(ifstream &in_fp)
+{
+    in_fp >> id >> password;
+}
 
 void LoginUI::writeOutput(ofstream &out_fp, User *user)
 {
@@ -21,7 +27,7 @@ LoginUI::~LoginUI()
 
 void LoginUI::loginAccount(ifstream &in_fp, ofstream &out_fp)
 {
-    in_fp >> id >> password;
+    readInput(in_fp);
     User *user = login->login(id, password);
     if (user)
     {

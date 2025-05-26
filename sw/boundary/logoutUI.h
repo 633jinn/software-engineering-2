@@ -15,7 +15,7 @@ private:
 public:
     LogoutUI(Logout *logout);
     ~LogoutUI();
-    void logoutAccount(ifstream &in_fp, ofstream &out_fp);
+    void logoutAccount(ofstream &out_fp);
 };
 
 #endif
