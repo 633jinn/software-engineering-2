@@ -72,13 +72,26 @@ public:
 };
 
 // 대여 정보 확인
-class CheckRentedInfo
+class CheckRentedBicycle
 {
 private:
-    CheckRentedInfoUI *checkRentedInfoUI;
+    CheckRentedBicycleUI *checkRentedBicycleUI;
 
 public:
-    CheckRentedInfo();
-    ~CheckRentedInfo();
+    CheckRentedBicycle();
+    ~CheckRentedBicycle();
+    void startInterface(ofstream &out_fp);
+    list<Bicycle *> checkRentedList();
+};
+
+class ExitProgram
+{
+private:
+    ExitProgramUI *exitProgramUI;
+
+public:
+    ExitProgram();
+    ~ExitProgram();
+    void startInterface(ofstream &out_fp);
 };
 #endif

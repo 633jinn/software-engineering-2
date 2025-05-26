@@ -74,13 +74,24 @@ public:
     void rentBicycleInfo(ifstream &in_fp, ofstream &out_fp);
 };
 
-class CheckRentedInfoUI
+class CheckRentedBicycleUI
 {
 private:
-    CheckRentedInfo *checkRentedInfo;
-
+    CheckRentedBicycle *checkRentedBicycle;
+    void writeOutput(ofstream &out_fp, list<Bicycle *> rentedBicycle);
 public:
-    CheckRentedInfoUI(CheckRentedInfo *checkRentedInfo);
-    ~CheckRentedInfoUI();
+    CheckRentedBicycleUI(CheckRentedBicycle *checkRentedBicycle);
+    ~CheckRentedBicycleUI();
+    void checkRentedInfo(ofstream &out_fp);
+};
+class ExitProgramUI
+{
+private:
+    ExitProgram *exitProgram;
+    void writeOutput(ofstream &out_fp);
+public:
+    ExitProgramUI(ExitProgram *exitProgram);
+    ~ExitProgramUI();
+    void exit(ofstream &out_fp);
 };
 #endif

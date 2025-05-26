@@ -114,12 +114,57 @@ Bicycle *RentBicycle::rentBicycle(string bicycleId)
         User *user = Session::getLoginUser();
         if (user)
         {
-            Member *member = dynamic_cast<Member*>(user);
-            if (member) {
+            Member *member = dynamic_cast<Member *>(user);
+            if (member)
+            {
                 member->getBicycleCollection()->addRentedBicycle(bicycle);
                 return bicycle;
             }
         }
     }
     return nullptr;
+}
+
+CheckRentedBicycle::CheckRentedBicycle()
+{
+    checkRentedBicycleUI = new CheckRentedBicycleUI(this);
+}
+
+CheckRentedBicycle::~CheckRentedBicycle()
+{
+    delete checkRentedBicycleUI;
+}
+
+void CheckRentedBicycle::startInterface(ofstream &out_fp)
+{
+    checkRentedBicycleUI->checkRentedInfo(out_fp);
+}
+
+list<Bicycle *> CheckRentedBicycle::checkRentedList()
+{
+    User *user = Session::getLoginUser();
+    if (user)
+    {
+        Member *member = dynamic_cast<Member *>(user);
+        if (member)
+        {
+            return member->getBicycleCollection()->getRentedList();
+        }
+    }
+    return list<Bicycle *>();
+}
+
+ExitProgram::ExitProgram()
+{
+    exitProgramUI = new ExitProgramUI(this);
+}
+
+ExitProgram::~ExitProgram()
+{
+    delete exitProgramUI;
+}
+
+void ExitProgram::startInterface(ofstream &out_fp)
+{
+    exitProgramUI->exit(out_fp);
 }

@@ -68,7 +68,7 @@ public:
     BicycleCollection();
     ~BicycleCollection();
     void addRentedBicycle(Bicycle *bicycle);
-    Bicycle *getRentedBicycle(string bicycleId);
+    list<Bicycle *> getRentedList();
 };
 
 class Database

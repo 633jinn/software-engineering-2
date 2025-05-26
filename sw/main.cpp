@@ -114,19 +114,34 @@ void doTask()
         RentBicycle *rentBicycleControl = new RentBicycle();
         rentBicycleControl->startInterface(in_fp, out_fp);
         delete rentBicycleControl;
-        is_program_exit = 1;
         break;
       }
       }
       break;
     }
-    case 7:
+    case 5:
+    {
+      switch (menu_level_2)
+      {
+      case 1: // "5.1. 자전거 대여 리스트" 메뉴 부분
+      {
+        CheckRentedBicycle *checkRentedInfoControl = new CheckRentedBicycle();
+        checkRentedInfoControl->startInterface(out_fp);
+        delete checkRentedInfoControl;
+        break;
+      }
+      }
+      break;
+    }
+    case 6:
     {
       switch (menu_level_2)
       {
       case 1: // "6.1. 종료" 메뉴 부분
       {
-        // ...
+        ExitProgram *exitProgramControl = new ExitProgram();
+        exitProgramControl->startInterface(out_fp);
+        delete exitProgramControl;
         is_program_exit = 1;
         break;
       }
@@ -134,7 +149,5 @@ void doTask()
       break;
     }
     }
-    // ...
   }
-  // is_program_exit = 1;
 }

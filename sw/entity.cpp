@@ -119,15 +119,15 @@ BicycleCollection::~BicycleCollection()
 
 void BicycleCollection::addRentedBicycle(Bicycle *bicycle)
 {
-    rentedBicycle.push_back(bicycle);
+    rentedBicycle.push_front(bicycle);
 }
 
-Bicycle *BicycleCollection::getRentedBicycle(string bicycleId)
+list<Bicycle *> BicycleCollection::getRentedList()
 {
+    list<Bicycle *> rentedBicycleList;
     for (auto bicycle : rentedBicycle)
     {
-        if (bicycle && bicycle->getId() == bicycleId)
-            return bicycle;
+        rentedBicycleList.push_back(bicycle);
     }
-    return nullptr;
+    return rentedBicycleList;
 }

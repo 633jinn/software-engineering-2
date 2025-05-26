@@ -6,22 +6,21 @@
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
-//전방 선언
+// 전방 선언
 class SignIn;
 class Login;
 class Logout;
-class CheckRentedInfo;
 class RegisterBicycle;
 class RentBicycle;
-class CheckRentedInfo;
+class CheckRentedBicycle;
+class ExitProgram;
 class SigninUI;
 class LoginUI;
 class LogoutUI;
-class CheckRentedInfoUI;
 class RegisterBicycleUI;
 class RentBicycleUI;
-class CheckRentedInfoUI;
-
+class CheckRentedBicycleUI;
+class ExitProgramUI;
 // 헤더 선언
 #include <string.h>
 #include <fstream>
