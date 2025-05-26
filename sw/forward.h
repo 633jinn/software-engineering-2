@@ -11,10 +11,14 @@ class SignIn;
 class Login;
 class Logout;
 class CheckRentedInfo;
+class RegisterBicycle;
+class RentBicycle;
 class SigninUI;
 class LoginUI;
 class LogoutUI;
 class CheckRentedInfoUI;
+class RegisterBicycleUI;
+class RentBicycleUI;
 
 // 헤더 선언
 #include <string.h>

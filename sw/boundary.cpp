@@ -71,3 +71,35 @@ void LogoutUI::logoutAccount(ifstream &in_fp, ofstream &out_fp)
     User *user = logout->logout();
     writeOutput(out_fp, user);
 }
+
+RegisterBicycleUI::RegisterBicycleUI(RegisterBicycle *registerBicycle)
+{
+    this->registerBicycle = registerBicycle;
+}
+
+RegisterBicycleUI::~RegisterBicycleUI()
+{
+}
+
+void RegisterBicycleUI::registerBicycleInfo(ifstream &in_fp, ofstream &out_fp)
+{
+    in_fp >> bicycleId >> bicycleName;
+    Bicycle *bicycle = registerBicycle->registerBicycle(bicycleId, bicycleName);
+    writeOutput(out_fp, bicycle);
+}
+
+void RegisterBicycleUI::writeOutput(ofstream &out_fp, Bicycle *bicycle)
+{
+    out_fp << "3.1. 자전거 등록" << endl;
+    out_fp << "> " << bicycle->getId() << " " << bicycle->getName() << endl
+           << endl;
+}
+
+CheckRentedInfoUI::CheckRentedInfoUI(CheckRentedInfo *checkRentedInfo)
+{
+    this->checkRentedInfo = checkRentedInfo;
+}
+
+CheckRentedInfoUI::~CheckRentedInfoUI()
+{
+}

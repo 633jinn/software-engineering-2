@@ -18,8 +18,7 @@ void SignIn::startInterface(ifstream &in_fp, ofstream &out_fp)
 
 Member *SignIn::addNewMember(string id, string password, string phoneNumber)
 {
-    Member *member = new Member(id, password, phoneNumber);
-    Database::addMember(member);
+    Member *member = Database::addMember(id, password, phoneNumber);
     return member;
 }
 
@@ -69,4 +68,25 @@ User *Logout::logout()
     User *user = Session::getLoginUser();
     Session::logoutUser();
     return user;
+}
+
+RegisterBicycle::RegisterBicycle()
+{
+    registerBicycleUI = new RegisterBicycleUI(this);
+}
+
+RegisterBicycle::~RegisterBicycle()
+{
+    delete registerBicycleUI;
+}
+
+void RegisterBicycle::startInterface(ifstream &in_fp, ofstream &out_fp)
+{
+    registerBicycleUI->registerBicycleInfo(in_fp, out_fp);
+}
+
+Bicycle *RegisterBicycle::registerBicycle(string bicycleId, string bicycleName)
+{
+    Bicycle *bicycle = Database::addBicycle(bicycleId, bicycleName);
+    return bicycle;
 }

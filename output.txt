@@ -1,4 +1,6 @@
 2.1. 로그인
 > admin admin
-2.2. 로그아웃
-> admin
+
+3.1. 자전거 등록
+> b1 bikeMaker
+

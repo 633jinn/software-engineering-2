@@ -55,13 +55,12 @@ class Bicycle
 private:
     string id;
     string name;
-    string getId();
 
 public:
     Bicycle(string id, string name);
     ~Bicycle();
-    bool findBicycle(string id);
-    bool getBicycleDetails();
+    string getId();
+    string getName();
 };
 
 class Database
@@ -72,8 +71,8 @@ private:
     static list<Bicycle *> bicycleList;
 
 public:
-    static void addMember(Member *member);
-    static void addBicycle(Bicycle *bicycle);
+    static Member *addMember(string id, string password, string phoneNumber);
+    static Bicycle *addBicycle(string bicycleId, string bicycleName);
     static User *findUser(string id, string password);
 
     // 정적 멤버 변수 초기화를 위한 friend 함수

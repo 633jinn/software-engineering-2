@@ -38,7 +38,7 @@ class Logout
 private:
     LogoutUI *logoutUI;
 public:
-    Logout(/* args */);
+    Logout();
     ~Logout();
     void startInterface(ifstream &in_fp, ofstream &out_fp);
     User *logout();
@@ -48,19 +48,21 @@ public:
 class RegisterBicycle
 {
 private:
-    /* data */
+    RegisterBicycleUI *registerBicycleUI;
 public:
-    RegisterBicycle(/* args */);
+    RegisterBicycle();
     ~RegisterBicycle();
+    void startInterface(ifstream &in_fp, ofstream &out_fp);
+    Bicycle *registerBicycle(string bicycleId, string bicycleName);
 };
 
 // 자전거 대여
 class RentBicycle
 {
 private:
-    /* data */
+    RentBicycleUI *rentBicycleUI;
 public:
-    RentBicycle(/* args */);
+    RentBicycle();
     ~RentBicycle();
 };
 
@@ -68,9 +70,9 @@ public:
 class CheckRentedInfo
 {
 private:
-    /* data */
+    CheckRentedInfoUI *checkRentedInfoUI;
 public:
-    CheckRentedInfo(/* args */);
+    CheckRentedInfo();
     ~CheckRentedInfo();
 };
 #endif

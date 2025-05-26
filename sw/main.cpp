@@ -86,13 +86,25 @@ void doTask()
         Logout *logoutControl = new Logout();
         logoutControl->startInterface(in_fp, out_fp);
         delete logoutControl;
-        is_program_exit = 1;
         break;
       }
       }
       break;
     }
-    // ...
+    case 3:
+    {
+      switch (menu_level_2)
+      {
+      case 1: // "3.1. 자전거 등록" 메뉴 부분
+      {
+        RegisterBicycle *registerBicycleControl = new RegisterBicycle();
+        registerBicycleControl->startInterface(in_fp, out_fp);
+        delete registerBicycleControl;
+        is_program_exit = 1;
+        break;
+      }
+      }
+    }
     case 7:
     {
       switch (menu_level_2)

@@ -50,14 +50,18 @@ void Manager::findUser()
 }
 
 // 데이터베이스
-void Database::addMember(Member *member)
+Member *Database::addMember(string id, string password, string phoneNumber)
 {
+    Member *member = new Member(id, password, phoneNumber);
     memberList.push_back(member);
+    return member;
 }
 
-void Database::addBicycle(Bicycle *bicycle)
+Bicycle *Database::addBicycle(string bicycleId, string bicycleName)
 {
+    Bicycle *bicycle = new Bicycle(bicycleId, bicycleName);
     bicycleList.push_back(bicycle);
+    return bicycle;
 }
 
 User *Database::findUser(string id, string password)
@@ -82,19 +86,15 @@ Bicycle::Bicycle(string id, string name)
 Bicycle::~Bicycle()
 {
 }
-bool Bicycle::findBicycle(string id)
-{
-    return this->id == id;
-}
-
-bool Bicycle::getBicycleDetails()
-{
-    return true;
-}
 
 string Bicycle::getId()
 {
     return id;
+}
+
+string Bicycle::getName()
+{
+    return name;
 }
 
 void Session::setLoginUser(User *user)

@@ -29,6 +29,7 @@ private:
     string id;
     string password;
     void writeOutput(ofstream &out_fp, User *user);
+
 public:
     LoginUI(Login *login);
     ~LoginUI();
@@ -40,6 +41,7 @@ class LogoutUI
 private:
     Logout *logout;
     void writeOutput(ofstream &out_fp, User *user);
+
 public:
     LogoutUI(Logout *logout);
     ~LogoutUI();
@@ -49,18 +51,24 @@ public:
 class RegisterBicycleUI
 {
 private:
-    /* data */
+    RegisterBicycle *registerBicycle;
+    string bicycleId;
+    string bicycleName;
+    void writeOutput(ofstream &out_fp, Bicycle *bicycle);
+
 public:
-    RegisterBicycleUI(/* args */);
+    RegisterBicycleUI(RegisterBicycle *registerBicycle);
     ~RegisterBicycleUI();
+    void registerBicycleInfo(ifstream &in_fp, ofstream &out_fp);
 };
 
 class CheckRentedInfoUI
 {
 private:
-    /* data */
+    CheckRentedInfo *checkRentedInfo;
+
 public:
-    CheckRentedInfoUI(/* args */);
+    CheckRentedInfoUI(CheckRentedInfo *checkRentedInfo);
     ~CheckRentedInfoUI();
 };
 #endif
