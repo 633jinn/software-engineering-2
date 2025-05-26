@@ -1,4 +1,4 @@
-#ifndef SIGNUP_CONTROL_H
+﻿#ifndef SIGNUP_CONTROL_H
 #define SIGNUP_CONTROL_H
 
 #include <string.h>

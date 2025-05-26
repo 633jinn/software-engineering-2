@@ -1,4 +1,4 @@
-#ifndef FORWARD_H
+﻿#ifndef FORWARD_H
 #define FORWARD_H
 
 // Entity

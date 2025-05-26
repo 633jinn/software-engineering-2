@@ -1,4 +1,4 @@
-#ifndef REGISTER_BICYCLE_CONTROL_H
+﻿#ifndef REGISTER_BICYCLE_CONTROL_H
 #define REGISTER_BICYCLE_CONTROL_H
 
 #include <string>

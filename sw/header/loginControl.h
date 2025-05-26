@@ -1,4 +1,4 @@
-#ifndef LOGIN_CONTROL_H
+﻿#ifndef LOGIN_CONTROL_H
 #define LOGIN_CONTROL_H
 
 #include <string>

@@ -26,7 +26,8 @@ list<Bicycle *> CheckRentedBicycle::checkRentedList()
     if (user)
     {
         Member *member = dynamic_cast<Member *>(user);
-        if (member)
+        
+        if (member) //로그인한 유저가 회원인 경우 대여 리스트 조회
         {
             return member->getBicycleCollection()->getRentedList();
         }

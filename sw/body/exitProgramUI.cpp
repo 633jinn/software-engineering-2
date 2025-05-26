@@ -1,4 +1,4 @@
-#include "../header/exitProgramUI.h"
+﻿#include "../header/exitProgramUI.h"
 #include <iostream>
 using namespace std;
 
@@ -16,5 +16,6 @@ void ExitProgramUI::exit(ofstream &out_fp)
 
 void ExitProgramUI::writeOutput(ofstream &out_fp)
 {
+    //프로그램 종료 출력.
     out_fp << "6.1. 종료" << endl;
 }

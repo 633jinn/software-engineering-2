@@ -1,4 +1,4 @@
-#ifndef LOGOUT_CONTROL_H
+﻿#ifndef LOGOUT_CONTROL_H
 #define LOGOUT_CONTROL_H
 
 #include <string>

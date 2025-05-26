@@ -1,4 +1,4 @@
-#ifndef EXIT_PROGRAM_CONTROL_H
+﻿#ifndef EXIT_PROGRAM_CONTROL_H
 #define EXIT_PROGRAM_CONTROL_H
 
 #include <string>
