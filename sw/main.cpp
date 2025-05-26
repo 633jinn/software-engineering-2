@@ -2,9 +2,8 @@
 #include <string>
 #include <fstream>
 #include <list>
-#include <locale>
 #ifdef _WIN32
-#include <windows.h>
+#include <windows.h> // Windows에서 콘솔 인코딩 설정을 위한 헤더
 #endif
 
 #include "forward.h"
@@ -136,6 +135,11 @@ void doTask(ifstream &in_fp, ofstream &out_fp, Database *database, Session *sess
 }
 int main()
 {
+  //인코딩을 위한 설정
+  #ifdef _WIN32
+  SetConsoleOutputCP(CP_UTF8); // UTF-8 인코딩 설정
+  SetConsoleCP(CP_UTF8); // 입력도 UTF-8로 설정
+  #endif
 
   // 파일 변수 선언
   ifstream in_fp;
