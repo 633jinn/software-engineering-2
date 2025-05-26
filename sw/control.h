@@ -10,12 +10,10 @@ using namespace std;
 class SignIn
 {
 private:
-    SigninUI *signInBoundary;
-    UserDB *userDB;
-    list<Member> memberList;
+    SigninUI *signInUI;
 
 public:
-    SignIn(UserDB *userDB);
+    SignIn();
     ~SignIn();
     void startInterface(ifstream &in_fp, ofstream &out_fp);
     Member *addNewMember(string id, string password, string phoneNumber);
@@ -25,10 +23,13 @@ public:
 class Login
 {
 private:
-    /* data */
+    LoginUI *loginUI;
+
 public:
-    Login(/* args */);
+    Login();
     ~Login();
+    void startInterface(ifstream &in_fp, ofstream &out_fp);
+    User *login(string id, string password);
 };
 
 // 로그아웃

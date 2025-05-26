@@ -3,6 +3,7 @@
 
 #include <string>
 #include <list>
+#include <iostream>
 using namespace std;
 
 class User
@@ -13,6 +14,14 @@ protected:
 
 public:
     virtual void findUser() = 0;
+    string getId() { return id; }
+    string getPassword() { return password; }
+    bool isValid(string id, string password)
+    {
+        if (id == this->id && password == this->password)
+            return true;
+        return false;
+    }
 };
 
 class Member : public User
@@ -28,8 +37,6 @@ public:
     void checkUserRentAvailability();
     void getBicycle();
     void getRentedBicycle();
-    string getId();
-    string getPassword();
     string getPhoneNumber();
 };
 
@@ -57,15 +64,33 @@ public:
     bool getBicycleDetails();
 };
 
-class UserDB
+class Database
 {
 private:
-    Manager *manager;
-    list<Member *> memberList;
+    static Manager *manager;
+    static list<Member *> memberList;
+    static list<Bicycle *> bicycleList;
 
 public:
-    UserDB();
-    ~UserDB();
-    void addMember(Member *member);
+    static void addMember(Member *member);
+    static void addBicycle(Bicycle *bicycle);
+    static User *findUser(string id, string password);
+
+    // 정적 멤버 변수 초기화를 위한 friend 함수
+    friend void initializeDatabase();
 };
+
+// Database 초기화 함수 선언
+void initializeDatabase();
+
+class Session
+{
+private:
+    static User *loginUser;
+
+public:
+    static void setLoginUser(User *user);
+    static User *getLoginUser();
+};
+
 #endif

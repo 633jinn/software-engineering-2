@@ -25,10 +25,14 @@ public:
 class LoginUI
 {
 private:
-    /* data */
+    Login *login;
+    string id;
+    string password;
 public:
-    LoginUI(/* args */);
+    LoginUI(Login *login);
     ~LoginUI();
+    void loginAccount(ifstream &in_fp, ofstream &out_fp);
+    void writeOutput(ofstream &out_fp, User *user);
 };
 
 class LogoutUI

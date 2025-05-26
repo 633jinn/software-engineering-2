@@ -7,7 +7,6 @@ Member::Member(string id, string password, string phoneNumber)
     this->id = id;
     this->password = password;
     this->phoneNumber = phoneNumber;
-    cout << "회원 생성" << endl;
 }
 
 Member::~Member()
@@ -28,16 +27,6 @@ void Member::getBicycle()
 
 void Member::getRentedBicycle()
 {
-}
-
-string Member::getId()
-{
-    return id;
-}
-
-string Member::getPassword()
-{
-    return password;
 }
 
 string Member::getPhoneNumber()
@@ -61,22 +50,26 @@ void Manager::findUser()
 }
 
 // 데이터베이스
-UserDB::UserDB()
-{
-    manager = new Manager("admin", "admin");
-}
-UserDB::~UserDB()
-{
-    delete manager;
-    for (auto member : memberList)
-    {
-        delete member;
-    }
-}
-
-void UserDB::addMember(Member *member)
+void Database::addMember(Member *member)
 {
     memberList.push_back(member);
+}
+
+void Database::addBicycle(Bicycle *bicycle)
+{
+    bicycleList.push_back(bicycle);
+}
+
+User *Database::findUser(string id, string password)
+{
+    if (manager && manager->isValid(id, password))
+        return manager;
+    for (auto member : memberList)
+    {
+        if (member && member->isValid(id, password))
+            return member;
+    }
+    return nullptr;
 }
 
 // 자전거
@@ -102,4 +95,14 @@ bool Bicycle::getBicycleDetails()
 string Bicycle::getId()
 {
     return id;
+}
+
+void Session::setLoginUser(User *user)
+{
+    loginUser = user;
+}
+
+User *Session::getLoginUser()
+{
+    return loginUser;
 }
