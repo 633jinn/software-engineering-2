@@ -74,32 +74,30 @@ public:
 class Database
 {
 private:
-    static Manager *manager;
-    static list<Member *> memberList;
-    static list<Bicycle *> bicycleList;
+    Manager *manager;
+    list<Member *> memberList;
+    list<Bicycle *> bicycleList;
 
 public:
-    static Member *addMember(string id, string password, string phoneNumber);
-    static User *findUser(string id, string password);
-    static Bicycle *addBicycle(string bicycleId, string bicycleName);
-    static Bicycle *findBicycle(string bicycleId);
-
-    // 정적 멤버 변수 초기화를 위한 friend 함수
-    friend void initializeDatabase();
+    Database();
+    ~Database();
+    Member *addMember(string id, string password, string phoneNumber);
+    User *findUser(string id, string password);
+    Bicycle *addBicycle(string bicycleId, string bicycleName);
+    Bicycle *findBicycle(string bicycleId);
 };
-
-// Database 초기화 함수 선언
-void initializeDatabase();
 
 class Session
 {
 private:
-    static User *loginUser;
+    User *loginUser;
 
 public:
-    static void setLoginUser(User *user);
-    static User *getLoginUser();
-    static void logoutUser();
+    Session();
+    ~Session();
+    void setLoginUser(User *user);
+    User *getLoginUser();
+    void logoutUser();
 };
 
 #endif

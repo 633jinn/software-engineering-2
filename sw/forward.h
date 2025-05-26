@@ -26,8 +26,4 @@ class ExitProgramUI;
 #include <fstream>
 #include <list>
 
-// 함수 선언
-void doTask();
-void join();
-void program_exit();
 #endif

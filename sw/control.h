@@ -11,9 +11,10 @@ class SignIn
 {
 private:
     SigninUI *signInUI;
+    Database *database;
 
 public:
-    SignIn();
+    SignIn(Database *database);
     ~SignIn();
     void startInterface(ifstream &in_fp, ofstream &out_fp);
     Member *addNewMember(string id, string password, string phoneNumber);
@@ -24,9 +25,10 @@ class Login
 {
 private:
     LoginUI *loginUI;
-
+    Database *database; 
+    Session *session;
 public:
-    Login();
+    Login(Database *database, Session *session);
     ~Login();
     void startInterface(ifstream &in_fp, ofstream &out_fp);
     User *login(string id, string password);
@@ -37,9 +39,10 @@ class Logout
 {
 private:
     LogoutUI *logoutUI;
-
+    Database *database;
+    Session *session;
 public:
-    Logout();
+    Logout(Database *database, Session *session);
     ~Logout();
     void startInterface(ifstream &in_fp, ofstream &out_fp);
     User *logout();
@@ -50,9 +53,9 @@ class RegisterBicycle
 {
 private:
     RegisterBicycleUI *registerBicycleUI;
-
+    Database *database; 
 public:
-    RegisterBicycle();
+    RegisterBicycle(Database *database);
     ~RegisterBicycle();
     void startInterface(ifstream &in_fp, ofstream &out_fp);
     Bicycle *registerBicycle(string bicycleId, string bicycleName);
@@ -63,9 +66,10 @@ class RentBicycle
 {
 private:
     RentBicycleUI *rentBicycleUI;
-
+    Database *database;
+    Session *session;
 public:
-    RentBicycle();
+    RentBicycle(Database *database, Session *session);
     ~RentBicycle();
     void startInterface(ifstream &in_fp, ofstream &out_fp);
     Bicycle *rentBicycle(string bicycleId);
@@ -76,9 +80,10 @@ class CheckRentedBicycle
 {
 private:
     CheckRentedBicycleUI *checkRentedBicycleUI;
-
+    Database *database;
+    Session *session;   
 public:
-    CheckRentedBicycle();
+    CheckRentedBicycle(Database *database, Session *session);
     ~CheckRentedBicycle();
     void startInterface(ofstream &out_fp);
     list<Bicycle *> checkRentedList();
@@ -88,9 +93,9 @@ class ExitProgram
 {
 private:
     ExitProgramUI *exitProgramUI;
-
+    Database *database;
 public:
-    ExitProgram();
+    ExitProgram(Database *database);
     ~ExitProgram();
     void startInterface(ofstream &out_fp);
 };

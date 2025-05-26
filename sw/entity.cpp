@@ -36,6 +36,16 @@ Manager::~Manager()
 {
 }
 
+Database::Database()
+{
+    manager = new Manager("admin", "admin");
+}
+
+Database::~Database()
+{
+    delete manager;
+}
+
 // 데이터베이스
 Member *Database::addMember(string id, string password, string phoneNumber)
 {
@@ -92,6 +102,15 @@ string Bicycle::getId()
 string Bicycle::getName()
 {
     return name;
+}
+
+Session::Session()
+{
+    loginUser = nullptr;
+}
+
+Session::~Session()
+{
 }
 
 void Session::setLoginUser(User *user)

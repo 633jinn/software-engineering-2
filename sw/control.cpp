@@ -1,8 +1,9 @@
 #include "control.h"
 using namespace std;
 
-SignIn::SignIn()
+SignIn::SignIn(Database *database)
 {
+    this->database = database;
     signInUI = new SigninUI(this);
 }
 
@@ -18,12 +19,14 @@ void SignIn::startInterface(ifstream &in_fp, ofstream &out_fp)
 
 Member *SignIn::addNewMember(string id, string password, string phoneNumber)
 {
-    Member *member = Database::addMember(id, password, phoneNumber);
+    Member *member = database->addMember(id, password, phoneNumber);
     return member;
 }
 
-Login::Login()
+Login::Login(Database *database, Session *session)
 {
+    this->database = database;
+    this->session = session;
     loginUI = new LoginUI(this);
 }
 
@@ -39,17 +42,19 @@ void Login::startInterface(ifstream &in_fp, ofstream &out_fp)
 
 User *Login::login(string id, string password)
 {
-    User *user = Database::findUser(id, password);
+    User *user = database->findUser(id, password);
     if (user)
     {
-        Session::setLoginUser(user);
+        session->setLoginUser(user);
         return user;
     }
     return nullptr;
 }
 
-Logout::Logout()
+Logout::Logout(Database *database, Session *session)
 {
+    this->database = database;
+    this->session = session;
     logoutUI = new LogoutUI(this);
 }
 
@@ -65,13 +70,14 @@ void Logout::startInterface(ifstream &in_fp, ofstream &out_fp)
 
 User *Logout::logout()
 {
-    User *user = Session::getLoginUser();
-    Session::logoutUser();
+    User *user = session->getLoginUser();
+    session->logoutUser();
     return user;
 }
 
-RegisterBicycle::RegisterBicycle()
+RegisterBicycle::RegisterBicycle(Database *database)
 {
+    this->database = database;
     registerBicycleUI = new RegisterBicycleUI(this);
 }
 
@@ -87,12 +93,14 @@ void RegisterBicycle::startInterface(ifstream &in_fp, ofstream &out_fp)
 
 Bicycle *RegisterBicycle::registerBicycle(string bicycleId, string bicycleName)
 {
-    Bicycle *bicycle = Database::addBicycle(bicycleId, bicycleName);
+    Bicycle *bicycle = database->addBicycle(bicycleId, bicycleName);
     return bicycle;
 }
 
-RentBicycle::RentBicycle()
+RentBicycle::RentBicycle(Database *database, Session *session)
 {
+    this->database = database;
+    this->session = session;
     rentBicycleUI = new RentBicycleUI(this);
 }
 
@@ -108,10 +116,10 @@ void RentBicycle::startInterface(ifstream &in_fp, ofstream &out_fp)
 
 Bicycle *RentBicycle::rentBicycle(string bicycleId)
 {
-    Bicycle *bicycle = Database::findBicycle(bicycleId);
+    Bicycle *bicycle = database->findBicycle(bicycleId);
     if (bicycle)
     {
-        User *user = Session::getLoginUser();
+        User *user = session->getLoginUser();
         if (user)
         {
             Member *member = dynamic_cast<Member *>(user);
@@ -125,8 +133,10 @@ Bicycle *RentBicycle::rentBicycle(string bicycleId)
     return nullptr;
 }
 
-CheckRentedBicycle::CheckRentedBicycle()
+CheckRentedBicycle::CheckRentedBicycle(Database *database, Session *session)
 {
+    this->database = database;
+    this->session = session;
     checkRentedBicycleUI = new CheckRentedBicycleUI(this);
 }
 
@@ -142,7 +152,7 @@ void CheckRentedBicycle::startInterface(ofstream &out_fp)
 
 list<Bicycle *> CheckRentedBicycle::checkRentedList()
 {
-    User *user = Session::getLoginUser();
+    User *user = session->getLoginUser();
     if (user)
     {
         Member *member = dynamic_cast<Member *>(user);
@@ -154,8 +164,9 @@ list<Bicycle *> CheckRentedBicycle::checkRentedList()
     return list<Bicycle *>();
 }
 
-ExitProgram::ExitProgram()
+ExitProgram::ExitProgram(Database *database)
 {
+    this->database = database;
     exitProgramUI = new ExitProgramUI(this);
 }
 
