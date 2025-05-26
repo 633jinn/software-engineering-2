@@ -62,6 +62,18 @@ public:
     void registerBicycleInfo(ifstream &in_fp, ofstream &out_fp);
 };
 
+class RentBicycleUI
+{
+private:
+    RentBicycle *rentBicycle;
+    string bicycleId;
+    void writeOutput(ofstream &out_fp, Bicycle *bicycle);
+public:
+    RentBicycleUI(RentBicycle *rentBicycle);
+    ~RentBicycleUI();
+    void rentBicycleInfo(ifstream &in_fp, ofstream &out_fp);
+};
+
 class CheckRentedInfoUI
 {
 private:

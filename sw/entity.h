@@ -3,9 +3,9 @@
 
 #include <string>
 #include <list>
-#include <iostream>
-using namespace std;
 
+using namespace std;
+class BicycleCollection;
 class User
 {
 protected:
@@ -13,7 +13,7 @@ protected:
     string password;
 
 public:
-    virtual void findUser() = 0;
+    virtual ~User() {} // 가상 소멸자 추가
     string getId() { return id; }
     string getPassword() { return password; }
     bool isValid(string id, string password)
@@ -24,22 +24,6 @@ public:
     }
 };
 
-class Member : public User
-{
-private:
-    string phoneNumber;
-    string bicycleId;
-
-public:
-    Member(string id, string password, string phoneNumber);
-    ~Member();
-    void findUser() override;
-    void checkUserRentAvailability();
-    void getBicycle();
-    void getRentedBicycle();
-    string getPhoneNumber();
-};
-
 class Manager : public User
 {
 private:
@@ -47,7 +31,19 @@ private:
 public:
     Manager(string id, string password);
     ~Manager();
-    void findUser() override;
+};
+
+class Member : public User
+{
+private:
+    string phoneNumber;
+    BicycleCollection *bicycleCollection;
+
+public:
+    Member(string id, string password, string phoneNumber);
+    ~Member();
+    string getPhoneNumber();
+    BicycleCollection *getBicycleCollection();
 };
 
 class Bicycle
@@ -63,6 +59,18 @@ public:
     string getName();
 };
 
+class BicycleCollection
+{
+private:
+    list<Bicycle *> rentedBicycle;
+
+public:
+    BicycleCollection();
+    ~BicycleCollection();
+    void addRentedBicycle(Bicycle *bicycle);
+    Bicycle *getRentedBicycle(string bicycleId);
+};
+
 class Database
 {
 private:
@@ -72,8 +80,9 @@ private:
 
 public:
     static Member *addMember(string id, string password, string phoneNumber);
-    static Bicycle *addBicycle(string bicycleId, string bicycleName);
     static User *findUser(string id, string password);
+    static Bicycle *addBicycle(string bicycleId, string bicycleName);
+    static Bicycle *findBicycle(string bicycleId);
 
     // 정적 멤버 변수 초기화를 위한 friend 함수
     friend void initializeDatabase();

@@ -90,3 +90,36 @@ Bicycle *RegisterBicycle::registerBicycle(string bicycleId, string bicycleName)
     Bicycle *bicycle = Database::addBicycle(bicycleId, bicycleName);
     return bicycle;
 }
+
+RentBicycle::RentBicycle()
+{
+    rentBicycleUI = new RentBicycleUI(this);
+}
+
+RentBicycle::~RentBicycle()
+{
+    delete rentBicycleUI;
+}
+
+void RentBicycle::startInterface(ifstream &in_fp, ofstream &out_fp)
+{
+    rentBicycleUI->rentBicycleInfo(in_fp, out_fp);
+}
+
+Bicycle *RentBicycle::rentBicycle(string bicycleId)
+{
+    Bicycle *bicycle = Database::findBicycle(bicycleId);
+    if (bicycle)
+    {
+        User *user = Session::getLoginUser();
+        if (user)
+        {
+            Member *member = dynamic_cast<Member*>(user);
+            if (member) {
+                member->getBicycleCollection()->addRentedBicycle(bicycle);
+                return bicycle;
+            }
+        }
+    }
+    return nullptr;
+}

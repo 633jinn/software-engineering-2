@@ -7,31 +7,22 @@ Member::Member(string id, string password, string phoneNumber)
     this->id = id;
     this->password = password;
     this->phoneNumber = phoneNumber;
+    this->bicycleCollection = new BicycleCollection();
 }
 
 Member::~Member()
 {
-}
-
-void Member::findUser()
-{
-}
-
-void Member::checkUserRentAvailability()
-{
-}
-
-void Member::getBicycle()
-{
-}
-
-void Member::getRentedBicycle()
-{
+    delete bicycleCollection;
 }
 
 string Member::getPhoneNumber()
 {
     return phoneNumber;
+}
+
+BicycleCollection *Member::getBicycleCollection()
+{
+    return bicycleCollection;
 }
 
 // 관리자
@@ -42,10 +33,6 @@ Manager::Manager(string id, string password)
 }
 
 Manager::~Manager()
-{
-}
-
-void Manager::findUser()
 {
 }
 
@@ -62,6 +49,16 @@ Bicycle *Database::addBicycle(string bicycleId, string bicycleName)
     Bicycle *bicycle = new Bicycle(bicycleId, bicycleName);
     bicycleList.push_back(bicycle);
     return bicycle;
+}
+
+Bicycle *Database::findBicycle(string bicycleId)
+{
+    for (auto bicycle : bicycleList)
+    {
+        if (bicycle && bicycle->getId() == bicycleId)
+            return bicycle;
+    }
+    return nullptr;
 }
 
 User *Database::findUser(string id, string password)
@@ -110,4 +107,27 @@ User *Session::getLoginUser()
 void Session::logoutUser()
 {
     loginUser = nullptr;
+}
+
+BicycleCollection::BicycleCollection()
+{
+}
+
+BicycleCollection::~BicycleCollection()
+{
+}
+
+void BicycleCollection::addRentedBicycle(Bicycle *bicycle)
+{
+    rentedBicycle.push_back(bicycle);
+}
+
+Bicycle *BicycleCollection::getRentedBicycle(string bicycleId)
+{
+    for (auto bicycle : rentedBicycle)
+    {
+        if (bicycle && bicycle->getId() == bicycleId)
+            return bicycle;
+    }
+    return nullptr;
 }

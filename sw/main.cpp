@@ -100,10 +100,25 @@ void doTask()
         RegisterBicycle *registerBicycleControl = new RegisterBicycle();
         registerBicycleControl->startInterface(in_fp, out_fp);
         delete registerBicycleControl;
+        break;
+      }
+      }
+      break;
+    }
+    case 4:
+    {
+      switch (menu_level_2)
+      {
+      case 1: // "4.1. 자전거 대여" 메뉴 부분
+      {
+        RentBicycle *rentBicycleControl = new RentBicycle();
+        rentBicycleControl->startInterface(in_fp, out_fp);
+        delete rentBicycleControl;
         is_program_exit = 1;
         break;
       }
       }
+      break;
     }
     case 7:
     {

@@ -37,6 +37,7 @@ class Logout
 {
 private:
     LogoutUI *logoutUI;
+
 public:
     Logout();
     ~Logout();
@@ -49,6 +50,7 @@ class RegisterBicycle
 {
 private:
     RegisterBicycleUI *registerBicycleUI;
+
 public:
     RegisterBicycle();
     ~RegisterBicycle();
@@ -61,9 +63,12 @@ class RentBicycle
 {
 private:
     RentBicycleUI *rentBicycleUI;
+
 public:
     RentBicycle();
     ~RentBicycle();
+    void startInterface(ifstream &in_fp, ofstream &out_fp);
+    Bicycle *rentBicycle(string bicycleId);
 };
 
 // 대여 정보 확인
@@ -71,6 +76,7 @@ class CheckRentedInfo
 {
 private:
     CheckRentedInfoUI *checkRentedInfoUI;
+
 public:
     CheckRentedInfo();
     ~CheckRentedInfo();
