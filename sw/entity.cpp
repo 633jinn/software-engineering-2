@@ -106,3 +106,8 @@ User *Session::getLoginUser()
 {
     return loginUser;
 }
+
+void Session::logoutUser()
+{
+    loginUser = nullptr;
+}

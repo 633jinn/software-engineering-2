@@ -28,20 +28,22 @@ private:
     Login *login;
     string id;
     string password;
+    void writeOutput(ofstream &out_fp, User *user);
 public:
     LoginUI(Login *login);
     ~LoginUI();
     void loginAccount(ifstream &in_fp, ofstream &out_fp);
-    void writeOutput(ofstream &out_fp, User *user);
 };
 
 class LogoutUI
 {
 private:
-    /* data */
+    Logout *logout;
+    void writeOutput(ofstream &out_fp, User *user);
 public:
-    LogoutUI(/* args */);
+    LogoutUI(Logout *logout);
     ~LogoutUI();
+    void logoutAccount(ifstream &in_fp, ofstream &out_fp);
 };
 
 class RegisterBicycleUI

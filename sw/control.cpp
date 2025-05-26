@@ -48,3 +48,25 @@ User *Login::login(string id, string password)
     }
     return nullptr;
 }
+
+Logout::Logout()
+{
+    logoutUI = new LogoutUI(this);
+}
+
+Logout::~Logout()
+{
+    delete logoutUI;
+}
+
+void Logout::startInterface(ifstream &in_fp, ofstream &out_fp)
+{
+    logoutUI->logoutAccount(in_fp, out_fp);
+}
+
+User *Logout::logout()
+{
+    User *user = Session::getLoginUser();
+    Session::logoutUser();
+    return user;
+}

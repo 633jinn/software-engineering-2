@@ -79,6 +79,13 @@ void doTask()
         Login *loginControl = new Login();
         loginControl->startInterface(in_fp, out_fp);
         delete loginControl;
+        break;
+      }
+      case 2:
+      {
+        Logout *logoutControl = new Logout();
+        logoutControl->startInterface(in_fp, out_fp);
+        delete logoutControl;
         is_program_exit = 1;
         break;
       }
@@ -102,5 +109,5 @@ void doTask()
     }
     // ...
   }
-  is_program_exit = 1;
+  // is_program_exit = 1;
 }

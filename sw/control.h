@@ -36,10 +36,12 @@ public:
 class Logout
 {
 private:
-    /* data */
+    LogoutUI *logoutUI;
 public:
     Logout(/* args */);
     ~Logout();
+    void startInterface(ifstream &in_fp, ofstream &out_fp);
+    User *logout();
 };
 
 // 자전거 등록

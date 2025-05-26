@@ -91,6 +91,7 @@ private:
 public:
     static void setLoginUser(User *user);
     static User *getLoginUser();
+    static void logoutUser();
 };
 
 #endif

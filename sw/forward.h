@@ -9,9 +9,11 @@
 //전방 선언
 class SignIn;
 class Login;
+class Logout;
 class CheckRentedInfo;
 class SigninUI;
 class LoginUI;
+class LogoutUI;
 class CheckRentedInfoUI;
 
 // 헤더 선언

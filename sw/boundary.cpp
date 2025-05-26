@@ -21,9 +21,16 @@ void SigninUI::signInAccount(ifstream &in_fp, ofstream &out_fp)
 void SigninUI::writeOutput(ofstream &out_fp, Member *member)
 {
     out_fp << "1.1. 회원가입" << endl;
-    out_fp << "> " << member->getId() << " " << member->getPassword() << " " << member->getPhoneNumber() << endl;
+    out_fp << "> " << member->getId() << " " << member->getPassword() << " " << member->getPhoneNumber() << endl
+           << endl;
 }
 
+void LoginUI::writeOutput(ofstream &out_fp, User *user)
+{
+    out_fp << "2.1. 로그인" << endl;
+    out_fp << "> " << user->getId() << " " << user->getPassword() << endl
+           << endl;
+}
 LoginUI::LoginUI(Login *login)
 {
     this->login = login;
@@ -43,8 +50,24 @@ void LoginUI::loginAccount(ifstream &in_fp, ofstream &out_fp)
     }
 }
 
-void LoginUI::writeOutput(ofstream &out_fp, User *user)
+void LogoutUI::writeOutput(ofstream &out_fp, User *user)
 {
-    out_fp << "2.1. 로그인" << endl;
-    out_fp << "> " << user->getId() << " " << user->getPassword() << endl;
+    out_fp << "2.2. 로그아웃" << endl;
+    out_fp << "> " << user->getId() << endl
+           << endl;
+}
+
+LogoutUI::LogoutUI(Logout *logout)
+{
+    this->logout = logout;
+}
+
+LogoutUI::~LogoutUI()
+{
+}
+
+void LogoutUI::logoutAccount(ifstream &in_fp, ofstream &out_fp)
+{
+    User *user = logout->logout();
+    writeOutput(out_fp, user);
 }
