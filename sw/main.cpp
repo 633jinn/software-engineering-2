@@ -1,6 +1,22 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <list>
+
 #include "forward.h"
-#include "entity.h"
-#include "control.h"
+#include "control/signupControl.h"
+#include "control/loginControl.h"
+#include "control/logoutControl.h"
+#include "control/registerBicycleControl.h"
+#include "control/rentBicycleControl.h"
+#include "control/checkRentedBicycleControl.h"
+#include "control/exitProgramControl.h"
+#include "entity/database.h"
+#include "entity/session.h"
+#include "entity/member.h"
+#include "entity/user.h"
+#include "entity/bicycle.h"
+#include "entity/bicycleCollection.h"
 using namespace std;
 
 void doTask(ifstream &in_fp, ofstream &out_fp, Database *database, Session *session)
@@ -25,9 +41,9 @@ void doTask(ifstream &in_fp, ofstream &out_fp, Database *database, Session *sess
       {
       case 1: // "1.1. 회원가입" 메뉴 부분
       {
-        SignIn *signInControl = new SignIn(database);
-        signInControl->startInterface(in_fp, out_fp);
-        delete signInControl;
+        SignUp *signUpControl = new SignUp(database);
+        signUpControl->startInterface(in_fp, out_fp);
+        delete signUpControl;
         break;
       }
       }
